@@ -1,9 +1,9 @@
 #pragma once
 
 #include "GtkTorrentTreeView.hpp"
+#include <gtorrent/Core.hpp>
 #include <gtkmm/headerbar.h>
 #include <gtkmm/window.h>
-#include <core/Core.hpp>
 #include <gtkmm/main.h>
 
 class GtkMainWindow : public Gtk::Window

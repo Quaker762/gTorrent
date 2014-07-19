@@ -1,10 +1,10 @@
 #pragma once
 
 #include <gtkmm/cellrendererprogress.h>
+#include <gtorrent/Torrent.hpp>
 #include <gtkmm/treemodel.h>
 #include <gtkmm/liststore.h>
 #include <gtkmm/treeview.h>
-#include <core/Torrent.hpp>
 
 // Gtk Torrent Columns Section
 
