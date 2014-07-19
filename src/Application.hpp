@@ -7,8 +7,8 @@ class Application
 {
 private:
 	static shared_ptr<Application> m_app;
-	
-	// Private Member Functions & Variables 
+
+	// Private Member Functions & Variables
 	shared_ptr<gt::Core> m_core;
 
 public:

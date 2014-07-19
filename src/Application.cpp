@@ -24,5 +24,10 @@ int Application::run(int argc, char **argv)
 	while (m_core->isRunning()) {
 		m_core->update();	}
 
+	while (m_core->isRunning())
+	{
+		m_core->update();
+	}
+
 	return 0;
 }
