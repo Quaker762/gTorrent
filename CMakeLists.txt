@@ -25,7 +25,7 @@ ELSE ()
 ENDIF ()
 
 # Set compiler flags
-SET (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -g -include all.h -Wall ${WIN32_CXXFLAGS}")
+SET (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -g -include ../src/all.h -Wall ${WIN32_CXXFLAGS}")
 
 # Fuck liboost for not providing boost.pc or fucking something
 SET (Boost_USE_STATIC_LIBS ON) 
@@ -50,7 +50,6 @@ LINK_DIRECTORIES (
 
 ADD_EXECUTABLE ( ${PROJECT_NAME}
         src/Application.cpp
-        src/gui/core/Base.cpp
         src/gui/gtk/Gtk.cpp
         src/gui/gtk/GtkAddMagnetLinkWindow.cpp
         src/gui/gtk/GtkMainWindow.cpp
@@ -68,7 +67,7 @@ ADD_DEFINITIONS (
 )
 
 INCLUDE_DIRECTORIES (
-        src/gui/
+        libs/include
         src/
         ${Boost_INCLUDE_DIRS}
         ${LIBTORRENT_INCLUDE_DIRS}
@@ -77,6 +76,7 @@ INCLUDE_DIRECTORIES (
 )
 
 TARGET_LINK_LIBRARIES ( ${PROJECT_NAME}
+        ${CMAKE_SOURCE_DIR}/libs/libgtorrent.a
         ${Boost_LIBRARIES}
         ${LIBTORRENT_LIBRARIES}
         ${LIBGTKMM_LIBRARIES}
