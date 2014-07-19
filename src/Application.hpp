@@ -1,8 +1,7 @@
 #pragma once
 
-#include <gui/core/Base.hpp>
-#include <gui/gtk/Gtk.hpp>
-#include <core/Core.hpp>
+#include "gui/gtk/Gtk.hpp"
+#include <gtorrent/Core.hpp>
 #include <Version.hpp>
 
 class Application
@@ -12,7 +11,7 @@ private:
 
 	// Private Member Functions & Variables
 	shared_ptr<gt::Core> m_core;
-	shared_ptr<GuiBase> m_gui;
+	shared_ptr<GuiGtk> m_gui;
 
 public:
 	static shared_ptr<Application> getSingleton();
