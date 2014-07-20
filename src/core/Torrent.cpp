@@ -244,6 +244,23 @@ unsigned int Torrent::getTotalLeechers()
 	return m_handle.status().num_peers - m_handle.status().num_seeds;
 }
 
+//THIS ONLY WORKS FOR FILES! FIX ME PLEASE!!!!
+unsigned int Torrent::getNumFiles()
+{
+	int nFiles;
+	if(gt::Core::isMagnetLink(getPath()))
+	{
+		//Assertion failed, because ti == NULL
+		//How to return magnet link specific info???
+		//nFiles = getTorrentParams().ti->num_files();
+	}
+	else
+	{
+		nFiles = getTorrentParams().ti->num_files();
+	}
+	return nFiles;
+}
+
 libtorrent::torrent_status::state_t Torrent::getState()
 {
 	return m_handle.status().state;

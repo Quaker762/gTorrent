@@ -60,6 +60,9 @@ public:
 	// Returns the current number of leechers attached to the file
 	unsigned int getTotalLeechers();
 
+	//Returns the number of files in this torrent
+	unsigned int getNumFiles();
+
 	// Returns the current amount of data uploaded for this torrent
 	boost::int64_t getTotalUploaded();
 
